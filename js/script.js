@@ -172,5 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
       year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
 
     document.getElementById("meal-date").value = formattedDate;
+    document.getElementById("other-date").value = formattedDate;
   };
 });
