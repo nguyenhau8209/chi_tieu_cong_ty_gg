@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker with Login</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="login-screen">
+      <h1>Login</h1>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <div id="expense-screen" class="hidden">
+      <h1>Expense Tracker</h1>
+      <div>
+        <div class="tab active" data-tab="meals-tab">Tiền cơm</div>
+        <div class="tab" data-tab="other-expenses-tab">Chi tiêu khác</div>
+      </div>
+      <div id="meals-tab" class="tab-content active">
+        <h2>Tiền cơm</h2>
+        <form id="meals-form">
+          <div class="form-group">
+            <label for="meal-expense-item">Khoản chi</label>
+            <input
+              type="text"
+              id="meal-expense-item"
+              required
+              value="Cơm trưa"
+            />
+          </div>
+          <div class="form-group">
+            <label for="meal-spender">Người chi</label>
+            <input type="text" id="meal-spender" required />
+          </div>
+          <div class="form-group">
+            <label for="meal-amount">Giá tiền</label>
+            <input type="number" id="meal-amount" required />
+          </div>
+          <div class="form-group">
+            <label for="meal-date">Thời gian</label>
+            <input type="datetime-local" id="meal-date" required />
+          </div>
+          <div class="form-group">
+            <label>Thành viên</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="Tất cả" /> Tất cả</label>
+              <label><input type="checkbox" value="Chiến" /> Chiến</label>
+              <label><input type="checkbox" value="Tuyến" /> Tuyến</label>
+              <label><input type="checkbox" value="Nam" /> Nam</label>
+              <label><input type="checkbox" value="Dương" /> Dương</label>
+              <label><input type="checkbox" value="Hậu" /> Hậu</label>
+            </div>
+          </div>
+          <button type="submit">Add Expense</button>
+        </form>
+        <div class="summary">
+          <h3>Summary</h3>
+          <p id="meals-total-amount">Total: 0</p>
+          <div class="filter-group">
+            <label for="meals-start-date">Start Date:</label>
+            <input type="date" id="meals-start-date" />
+            <label for="meals-end-date">End Date:</label>
+            <input type="date" id="meals-end-date" />
+            <button id="meals-filter-btn">Filter</button>
+          </div>
+          <div class="expenses-list" id="meals-expenses-list"></div>
+        </div>
+      </div>
+
+      <div id="other-expenses-tab" class="tab-content">
+        <h2>Chi tiêu khác</h2>
+        <form id="other-expenses-form">
+          <div class="form-group">
+            <label for="other-expense-item">Khoản chi</label>
+            <input
+              type="text"
+              id="other-expense-item"
+              required
+              value="Hoa quả"
+            />
+          </div>
+          <div class="form-group">
+            <label for="other-spender">Người chi</label>
+            <input type="text" id="other-spender" required />
+          </div>
+          <div class="form-group">
+            <label for="other-amount">Giá tiền</label>
+            <input type="number" id="other-amount" required />
+          </div>
+          <div class="form-group">
+            <label for="other-date">Thời gian</label>
+            <input type="datetime-local" id="other-date" required />
+          </div>
+          <div class="form-group">
+            <label>Thành viên</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="Tất cả" /> Tất cả</label>
+              <label><input type="checkbox" value="Chiến" /> Chiến</label>
+              <label><input type="checkbox" value="Tuyến" /> Tuyến</label>
+              <label><input type="checkbox" value="Nam" /> Nam</label>
+              <label><input type="checkbox" value="Dương" /> Dương</label>
+              <label><input type="checkbox" value="Hậu" /> Hậu</label>
+            </div>
+          </div>
+          <button type="submit">Add Expense</button>
+        </form>
+        <div class="summary">
+          <h3>Summary</h3>
+          <p id="other-total-amount">Total: 0</p>
+          <div class="filter-group">
+            <label for="other-start-date">Start Date:</label>
+            <input type="date" id="other-start-date" />
+            <label for="other-end-date">End Date:</label>
+            <input type="date" id="other-end-date" />
+            <button id="other-filter-btn">Filter</button>
+          </div>
+          <div class="expenses-list" id="other-expenses-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
